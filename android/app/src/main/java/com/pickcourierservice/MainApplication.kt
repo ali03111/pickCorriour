@@ -1,4 +1,4 @@
-package com.pickcourierservice
+package com.seraph
 
 import android.app.Application
 import com.facebook.react.PackageList

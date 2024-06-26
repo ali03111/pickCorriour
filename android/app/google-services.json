@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "569887587813",
+    "project_id": "seraph-fe7a1",
+    "storage_bucket": "seraph-fe7a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569887587813:android:b85454d61e8b17e123030c",
+        "android_client_info": {
+          "package_name": "com.seraph"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTZ7YKjCBTLkFOc_BQ64SN0ZlDOur4398"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

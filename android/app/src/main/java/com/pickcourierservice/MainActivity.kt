@@ -1,4 +1,4 @@
-package com.pickcourierservice
+package com.seraph
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
