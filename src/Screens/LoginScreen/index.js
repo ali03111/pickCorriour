@@ -18,7 +18,7 @@ import {Controller} from 'react-hook-form';
 import useLogin from './useLoginScreen';
 import {Touchable} from '../../Components/Touchable';
 import KeyBoardWrapper from '../../Components/KeyBoardWrapper';
-import {LoginBg} from '../../Assets';
+import {LoginBg, bgImage} from '../../Assets';
 import {hp, wp} from '../../Config/responsive';
 import {Colors} from '../../Theme/Variables';
 import SocialBottomView from '../../Components/SocialBottomComp';
@@ -44,7 +44,7 @@ const LoginScreen = ({navigation}) => {
     remember,
   } = useLogin(navigation);
   return (
-    <ImageBackground source={LoginBg} style={styles.ImgBg}>
+    <ImageBackground source={bgImage} style={styles.ImgBg}>
       <KeyBoardWrapper
         styles={styles.logInMain}
         showsVerticalScrollIndicator={false}>
@@ -87,19 +87,6 @@ const LoginScreen = ({navigation}) => {
           </View>
 
           <View style={styles.rememberSec}>
-            <View style={styles.checkContainer}>
-              <Touchable style={styles.checkContainer} onPress={handleClick}>
-                <Image
-                  source={check ? tickfill : tickemp}
-                  style={{
-                    resizeMode: 'contain',
-                    // tintColor: Colors.white,
-                    width: wp('5.5'),
-                  }}
-                />
-              </Touchable>
-              <TextComponent text={'Remember me'} styles={styles.remStyle} />
-            </View>
             <TextComponent
               text={'Forgot Password?'}
               styles={styles.forgetText}
@@ -107,12 +94,6 @@ const LoginScreen = ({navigation}) => {
             />
           </View>
 
-          <View style={styles.barMain}>
-            <View style={styles.barLine}></View>
-            <TextComponent text={'Or Log In with'} styles={styles.barText} />
-            <View style={styles.barLine}></View>
-          </View>
-          <SocialBottomComp />
           <View style={styles.dontHave}>
             <TextComponent
               text={'Don’t have an account?'}

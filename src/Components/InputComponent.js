@@ -45,6 +45,7 @@ export const InputComponent = ({
                 source={isImage}
                 style={{
                   resizeMode: 'contain',
+                  tintColor: Colors.primaryColor,
                   ...styles.inputIcon,
                   ...inputIconStyle,
                 }}

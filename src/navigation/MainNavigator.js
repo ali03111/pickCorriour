@@ -26,21 +26,14 @@ function MainNavigator() {
           headerTitle: null,
           headerShown: false,
         }}>
-        {!onboarding && (
-          <Stack.Screen
-            name="OnBoardScreen"
-            component={Screens.OnBoardScreen}
-          />
-        )}
         {!isLogin && (
           <>
-            <Stack.Screen name="MybottomTabs" component={MybottomTabs} />
-
             <Stack.Screen name="LoginScreen" component={Screens.LoginScreen} />
             <Stack.Screen
               name="RegisterScreen"
               component={Screens.RegisterScreen}
             />
+            <Stack.Screen name="MybottomTabs" component={MybottomTabs} />
             {/* <Stack.Screen
               name="ForgetPasswordScreen"
               component={Screens.ForgetPasswordScreen}

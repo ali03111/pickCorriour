@@ -57,7 +57,7 @@ export const styles = StyleSheet.create({
   logInMain: {
     // paddingHorizontal: wp('3.5'),
     justifyContent: 'center',
-    position: 'relative'
+    position: 'relative',
   },
   buttonStyle: {
     // marginTop: hp('3'),
@@ -65,7 +65,7 @@ export const styles = StyleSheet.create({
   lockstyle: {
     flex: 0.5,
   },
-  
+
   userIconStyle: {
     flex: 2,
   },
@@ -85,9 +85,9 @@ export const styles = StyleSheet.create({
     marginRight: wp('4'),
   },
   signUpText: {
-    color: Colors.themeOrg,
+    color: Colors.primaryColor,
     fontSize: hp('2'),
-    fontWeight: '600'
+    fontWeight: '600',
   },
   lastNameSt: {
     // position: 'absolute',

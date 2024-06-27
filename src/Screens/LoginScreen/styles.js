@@ -138,7 +138,7 @@ export const styles = StyleSheet.create({
     marginRight: wp('4'),
   },
   signUpText: {
-    color: Colors.themeOrg,
+    color: Colors.primaryColor,
     fontSize: hp('2'),
     fontWeight: '600',
   },
