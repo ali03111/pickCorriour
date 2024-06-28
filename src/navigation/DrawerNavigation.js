@@ -9,6 +9,10 @@ import {NavigationContainer} from '@react-navigation/native';
 import {CircleImage} from '../Components/CircleImage';
 import {demoProfile} from '../Assets';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+
 import {hp} from '../Config/responsive';
 import {Colors} from '../Theme/Variables';
 
@@ -41,41 +45,83 @@ function CustomDrawerContent(props) {
       <DrawerItem
         label="Home"
         onPress={() => props.navigation.navigate('Home')}
-        // icon={() => <Icon name="home" />}
-      />
-      <DrawerItem
-        label="My Trucks"
-        onPress={() => props.navigation.navigate('My Trucks')}
-        // icon={() => <Icon name="truck" type="font-awesome" />}
-      />
-      <DrawerItem
-        label="My Drivers"
-        onPress={() => props.navigation.navigate('My Drivers')}
-        // icon={() => <Icon name="drivers-license" type="font-awesome" />}
-      />
-      <DrawerItem
-        label="My Profile"
-        onPress={() => props.navigation.navigate('My Profile')}
-        // icon={() => <Icon name="user" type="font-awesome" />}
-      />
-      <DrawerItem
-        label="Change Language"
-        onPress={() => props.navigation.navigate('Change Language')}
-        // icon={() => <Icon name="language" />}
-      />
-      <DrawerItem
-        label="Terms And Conditions"
-        onPress={() => props.navigation.navigate('Terms And Conditions')}
-        // icon={() => <Icon name="file-text" type="font-awesome" />}
-      />
-      <DrawerItem
-        label="Contact Us"
-        onPress={() => props.navigation.navigate('Contact Us')}
         icon={() => (
           <Ionicons
             style={styles.dropDown}
             color={Colors.primaryColor}
             name={'home'}
+            size={hp('3')}
+          />
+        )}
+      />
+      <DrawerItem
+        label="My Trucks"
+        onPress={() => props.navigation.navigate('My Trucks')}
+        icon={() => (
+          <MaterialCommunityIcons
+            style={styles.dropDown}
+            color={Colors.primaryColor}
+            name={'truck-fast'}
+            size={hp('3')}
+          />
+        )}
+      />
+      <DrawerItem
+        label="My Drivers"
+        onPress={() => props.navigation.navigate('My Drivers')}
+        icon={() => (
+          <Ionicons
+            style={styles.dropDown}
+            color={Colors.primaryColor}
+            name={'card-outline'}
+            size={hp('3')}
+          />
+        )}
+      />
+      <DrawerItem
+        label="My Profile"
+        onPress={() => props.navigation.navigate('My Profile')}
+        icon={() => (
+          <AntDesign
+            style={styles.dropDown}
+            color={Colors.primaryColor}
+            name={'user'}
+            size={hp('3')}
+          />
+        )}
+      />
+      <DrawerItem
+        label="Change Language"
+        onPress={() => props.navigation.navigate('Change Language')}
+        icon={() => (
+          <Fontisto
+            style={styles.dropDown}
+            color={Colors.primaryColor}
+            name={'world-o'}
+            size={hp('3')}
+          />
+        )}
+      />
+      <DrawerItem
+        label="Terms And Conditions"
+        onPress={() => props.navigation.navigate('Terms And Conditions')}
+        icon={() => (
+          <MaterialCommunityIcons
+            style={styles.dropDown}
+            color={Colors.primaryColor}
+            name={'clipboard-list-outline'}
+            size={hp('3')}
+          />
+        )}
+      />
+      <DrawerItem
+        label="Contact Us"
+        onPress={() => props.navigation.navigate('Contact Us')}
+        icon={() => (
+          <MaterialCommunityIcons
+            style={styles.dropDown}
+            color={Colors.primaryColor}
+            name={'email'}
             size={hp('3')}
           />
         )}
@@ -91,7 +137,7 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigation() {
   return (
     <Drawer.Navigator
-      screenOptions={{headerShown: false}}
+      //   screenOptions={{headerShown: false}}
       drawerContent={props => <CustomDrawerContent {...props} />}
       initialRouteName="Home">
       <Drawer.Screen
