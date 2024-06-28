@@ -6,6 +6,8 @@ import {
   ScrollView,
   Linking,
   ImageBackground,
+  Dimensions,
+  TouchableOpacity,
 } from 'react-native';
 import {TextComponent} from '../../Components/TextComponent';
 import {styles} from './styles';
@@ -28,6 +30,7 @@ import {
   locksetting,
   sms,
   user,
+  demoProfile,
 } from '../../Assets';
 import {InputComponent} from '../../Components/InputComponent';
 import {Controller} from 'react-hook-form';
@@ -35,9 +38,10 @@ import {Touchable} from '../../Components/Touchable';
 import useRegister from './useRegisterScreen';
 import KeyBoardWrapper from '../../Components/KeyBoardWrapper';
 import {LoginBg} from '../../Assets';
-import {hp} from '../../Config/responsive';
+import {hp, wp} from '../../Config/responsive';
 import SocialBottomComp from '../../Components/SocialBottomComp';
 import ImageBgComp from '../../Components/ImageBgComp';
+import {CircleImage} from '../../Components/CircleImage';
 
 const RegisterScreen = ({navigation}) => {
   const {
@@ -51,6 +55,8 @@ const RegisterScreen = ({navigation}) => {
     signUpButton,
     PolicyValue,
     policy,
+    onSelectImage,
+    profileData,
   } = useRegister(navigation);
   return (
     <ImageBgComp
@@ -61,6 +67,20 @@ const RegisterScreen = ({navigation}) => {
           <View style={styles.loginBottom}>
             <View style={styles.loginTop}>
               <TextComponent text={'Sign Up'} styles={styles.signInText} />
+              <CircleImage
+                image={
+                  Boolean(profileData?.path) ? profileData?.path : demoProfile
+                }
+                styles={styles.profileView}
+                uri={Boolean(profileData?.path) ? true : false}
+              />
+
+              <TouchableOpacity onPress={onSelectImage}>
+                <TextComponent
+                  text={'Upload Photo'}
+                  styles={styles.uploadBtn}
+                />
+              </TouchableOpacity>
             </View>
             <InputComponent
               {...{

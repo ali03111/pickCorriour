@@ -9,6 +9,7 @@ import {Provider} from 'react-redux';
 import {persistor, store} from './src/Redux/Reducer';
 import {PersistGate} from 'redux-persist/integration/react';
 import FlashMessage from 'react-native-flash-message';
+import 'react-native-gesture-handler';
 
 const PickCor = () => (
   <Provider store={store}>

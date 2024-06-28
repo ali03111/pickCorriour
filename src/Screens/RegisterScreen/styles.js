@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {hp, wp} from '../../Config/responsive';
-import {Colors} from '../../Theme/Variables';
+import {Colors, FontSize} from '../../Theme/Variables';
 
 export const styles = StyleSheet.create({
   ImgBg: {
@@ -14,8 +14,9 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
     color: Colors.white,
   },
+
   loginTop: {
-    alignItems: 'flex-start',
+    // alignItems: 'flex-start',
     marginTop: hp('3'),
     marginBottom: hp('2'),
     paddingHorizontal: wp('1.5'),
@@ -146,5 +147,19 @@ export const styles = StyleSheet.create({
   socialImage: {
     width: wp('7'),
     height: hp('3.5'),
+  },
+  profileView: {
+    alignSelf: 'center',
+    marginTop: hp('5 '),
+    marginBottom: hp('5'),
+    aspectRatio: 1,
+    height: hp('18'),
+  },
+  uploadBtn: {
+    textAlign: 'center',
+    marginTop: hp('-2'),
+    fontSize: FontSize.scale24,
+    fontWeight: '700',
+    color: Colors.primaryColor,
   },
 });

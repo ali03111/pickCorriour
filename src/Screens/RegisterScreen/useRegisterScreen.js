@@ -2,6 +2,9 @@ import {useState} from 'react';
 import {loginUser} from '../../Redux/Action/AuthAction';
 import useReduxStore from '../../Hooks/UseReduxStore';
 import {errorMessage} from '../../Config/NotificationMessage';
+import {androidCameraPermission} from '../../Utils/Permission';
+import {Alert} from 'react-native';
+import ImageCropPicker from 'react-native-image-crop-picker';
 
 const {default: useFormHook} = require('../../Hooks/UseFormHooks');
 const {default: Schemas} = require('../../Utils/Validation');
@@ -47,6 +50,29 @@ const useRegister = ({navigate, goBack}) => {
     setPolicy(!policy);
   };
 
+  const onSelectImage = async () => {
+    const permissionStatus = await androidCameraPermission();
+    if (permissionStatus || Platform.OS === 'android') {
+      Alert.alert('Upload Picture', 'Choose Option', [
+        {text: 'Gallery', onPress: onGallery},
+        {text: 'Cancel', onPress: () => {}},
+      ]);
+    }
+  };
+
+  // Function to opening the gallery of android
+  const [profileData, setProfileData] = useState(null);
+  const onGallery = () => {
+    ImageCropPicker.openPicker({
+      cropping: true,
+      width: 300,
+      height: 400,
+    }).then(images => {
+      console.log(images, 'aklsdjflkajsdf');
+      setProfileData(images);
+    });
+  };
+
   return {
     handleSubmit,
     errors,
@@ -64,6 +90,8 @@ const useRegister = ({navigate, goBack}) => {
     signUpButton,
     PolicyValue,
     policy,
+    onSelectImage,
+    profileData,
   };
 };
 

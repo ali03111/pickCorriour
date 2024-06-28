@@ -6,6 +6,7 @@ import NavigationService from '../Services/NavigationService';
 import * as Screens from '../Screens/index';
 import MybottomTabs from './bottomNavigation';
 import Orientation from 'react-native-orientation-locker';
+import DrawerNavigation from './DrawerNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,12 +29,17 @@ function MainNavigator() {
         }}>
         {!isLogin && (
           <>
-            <Stack.Screen name="LoginScreen" component={Screens.LoginScreen} />
+            <Stack.Screen
+              name="DrawerNavigation"
+              component={DrawerNavigation}
+            />
             <Stack.Screen
               name="RegisterScreen"
               component={Screens.RegisterScreen}
             />
-            <Stack.Screen name="MybottomTabs" component={MybottomTabs} />
+            <Stack.Screen name="LoginScreen" component={Screens.LoginScreen} />
+
+            {/* <Stack.Screen name="MybottomTabs" component={MybottomTabs} /> */}
             {/* <Stack.Screen
               name="ForgetPasswordScreen"
               component={Screens.ForgetPasswordScreen}
