@@ -15,6 +15,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 
 import {hp} from '../Config/responsive';
 import {Colors} from '../Theme/Variables';
+import {TextComponent} from '../Components/TextComponent';
 
 function HomeScreen({navigation}) {
   return (
@@ -34,16 +35,20 @@ function NotificationsScreen({navigation}) {
     </View>
   );
 }
+
 function CustomDrawerContent(props) {
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.profileContainer}>
         <CircleImage image={demoProfile} styles={styles.profileView} />
-        <Text style={styles.profileName}>George Pool</Text>
-        <Text style={styles.profileCompany}>Seven Star Transportations</Text>
+        <TextComponent text="George Pool" styles={styles.profileName} />
+        <TextComponent
+          text="Seven Star Transportations"
+          styles={styles.profileCompany}
+        />
       </View>
       <DrawerItem
-        label="Home"
+        label={() => <TextComponent text="Home" styles={styles.drawerLabel} />}
         onPress={() => props.navigation.navigate('Home')}
         icon={() => (
           <Ionicons
@@ -55,7 +60,9 @@ function CustomDrawerContent(props) {
         )}
       />
       <DrawerItem
-        label="My Trucks"
+        label={() => (
+          <TextComponent text="My Trucks" styles={styles.drawerLabel} />
+        )}
         onPress={() => props.navigation.navigate('My Trucks')}
         icon={() => (
           <MaterialCommunityIcons
@@ -67,7 +74,9 @@ function CustomDrawerContent(props) {
         )}
       />
       <DrawerItem
-        label="My Drivers"
+        label={() => (
+          <TextComponent text="My Drivers" styles={styles.drawerLabel} />
+        )}
         onPress={() => props.navigation.navigate('My Drivers')}
         icon={() => (
           <Ionicons
@@ -79,7 +88,9 @@ function CustomDrawerContent(props) {
         )}
       />
       <DrawerItem
-        label="My Profile"
+        label={() => (
+          <TextComponent text="My Profile" styles={styles.drawerLabel} />
+        )}
         onPress={() => props.navigation.navigate('My Profile')}
         icon={() => (
           <AntDesign
@@ -91,7 +102,9 @@ function CustomDrawerContent(props) {
         )}
       />
       <DrawerItem
-        label="Change Language"
+        label={() => (
+          <TextComponent text="Change Language" styles={styles.drawerLabel} />
+        )}
         onPress={() => props.navigation.navigate('Change Language')}
         icon={() => (
           <Fontisto
@@ -103,7 +116,12 @@ function CustomDrawerContent(props) {
         )}
       />
       <DrawerItem
-        label="Terms And Conditions"
+        label={() => (
+          <TextComponent
+            text="Terms And Conditions"
+            styles={styles.drawerLabel}
+          />
+        )}
         onPress={() => props.navigation.navigate('Terms And Conditions')}
         icon={() => (
           <MaterialCommunityIcons
@@ -115,7 +133,9 @@ function CustomDrawerContent(props) {
         )}
       />
       <DrawerItem
-        label="Contact Us"
+        label={() => (
+          <TextComponent text="Contact Us" styles={styles.drawerLabel} />
+        )}
         onPress={() => props.navigation.navigate('Contact Us')}
         icon={() => (
           <MaterialCommunityIcons
@@ -125,13 +145,10 @@ function CustomDrawerContent(props) {
             size={hp('3')}
           />
         )}
-
-        // icon={() => <Icon name="envelope" type="font-awesome" />}
       />
     </DrawerContentScrollView>
   );
 }
-
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigation() {
@@ -158,10 +175,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-  profileImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+  profileView: {
+    marginBottom: 10,
   },
   profileName: {
     fontSize: 18,
@@ -172,6 +187,13 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: 'gray',
   },
+  screenText: {
+    fontSize: 16,
+  },
+  drawerLabel: {
+    fontSize: 16,
+  },
+  dropDown: {},
   profileView: {
     alignSelf: 'center',
     marginBottom: hp('2'),
