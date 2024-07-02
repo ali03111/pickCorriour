@@ -30,6 +30,15 @@ function MainNavigator() {
         {!isLogin && (
           <>
             <Stack.Screen
+              name="ProfileScreen"
+              component={Screens.ProfileScreen}
+            />
+            <Stack.Screen
+              name="EditProfileScreen"
+              component={Screens.EditProfileScreen}
+            />
+            <Stack.Screen name="TripHistory" component={Screens.TripHistory} />
+            <Stack.Screen
               name="DrawerNavigation"
               component={DrawerNavigation}
             />
@@ -39,7 +48,6 @@ function MainNavigator() {
             />
             <Stack.Screen name="LoginScreen" component={Screens.LoginScreen} />
 
-            {/* <Stack.Screen name="MybottomTabs" component={MybottomTabs} /> */}
             {/* <Stack.Screen
               name="ForgetPasswordScreen"
               component={Screens.ForgetPasswordScreen}
@@ -58,6 +66,7 @@ function MainNavigator() {
               component={Screens.SkeletonScreen}
             /> */}
             <Stack.Screen name="MybottomTabs" component={MybottomTabs} />
+
             {/* <Stack.Screen
               name="TrainingScreen"
               component={Screens.TrainingScreen}

@@ -5,3 +5,6 @@ export {default as HomeScreen} from './HomeScreen';
 export {default as flash} from './flash';
 export {default as SeetingScreen} from './SettingScreen';
 export {default as SOSScreen} from './SOSScreen';
+export {default as ProfileScreen} from './ProfileScreen';
+export {default as EditProfileScreen} from './EditProfileScreen';
+export {default as TripHistory} from './TripHistory';

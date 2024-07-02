@@ -91,7 +91,7 @@ function CustomDrawerContent(props) {
         label={() => (
           <TextComponent text="My Profile" styles={styles.drawerLabel} />
         )}
-        onPress={() => props.navigation.navigate('My Profile')}
+        onPress={() => props.navigation.navigate('ProfileScreen')}
         icon={() => (
           <AntDesign
             style={styles.dropDown}

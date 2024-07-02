@@ -29,10 +29,10 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: hp('2'),
-    color: Colors.white,
+    color: Colors.black,
     textAlign: 'center',
     // marginLeft: wp('3'),
-    fontWeight: 500,
+    fontWeight: 'bold',
   },
   linearGradient: {
     borderRadius: 10,

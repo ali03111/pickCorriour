@@ -15,6 +15,5 @@ export default ImageBgComp;
 export const styles = StyleSheet.create({
   ImgBg: {
     flex: 1,
-    justifyContent: 'center',
   },
 });

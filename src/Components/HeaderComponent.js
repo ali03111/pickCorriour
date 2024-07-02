@@ -4,7 +4,7 @@ import {TextComponent} from './TextComponent';
 import {Touchable} from './Touchable';
 import {arrowBack} from '../Assets';
 import {hp, wp} from '../Config/responsive';
-import {Colors} from '../Theme/Variables';
+import {Colors, FontSize} from '../Theme/Variables';
 
 export const HeaderComponent = ({
   headerTitle,
@@ -92,12 +92,13 @@ const styles = StyleSheet.create({
     fontSize: hp('2'),
   },
   HeaderTitle: {
-    fontSize: hp('2.5'),
+    fontSize: FontSize.scale16,
     color: Colors.white,
-    fontWeight: '500',
+    fontWeight: 'bold',
     // width: wp('60'),
-    textAlignVertical: 'center',
+    // textAlignVertical: 'center',
     // justifyContent: 'center',
+    textAlign: 'left',
   },
   HeaderLeft: {
     flex: 0.5,
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     textAlign: 'center',
     alignSelf: 'center',
-    width: wp('7'),
+    width: wp('3'),
   },
   filterIcon: {
     alignItems: 'center',
@@ -137,8 +138,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // backgroundColor: 'blue',
     height: hp('5'),
-    textAlign: 'center',
-    marginTop: hp('1'),
+    // textAlign: 'center',
+    marginTop: hp('2.5'),
     // width: wp('100'),
   },
   HeaderRight: {
