@@ -21,7 +21,11 @@ const EditProfileScreen = ({navigation}) => {
   const InputViewWithHeading = ({title, inputVal, viewStyle}) => {
     return (
       <View style={viewStyle}>
-        <TextComponent text={title} fade={true} styles={{color: 'gray'}} />
+        <TextComponent
+          text={title}
+          fade={true}
+          styles={{color: 'gray', fontWeight: 'bold'}}
+        />
         <InputComponent
           {...{
             name: inputVal,
@@ -35,8 +39,15 @@ const EditProfileScreen = ({navigation}) => {
             defaultValue: '',
             // isSecure: true,
             inputIconStyle: styles.lockstyle,
-            tintColor: Colors.themeRed,
-            viewStyle: {width: wp('85'), marginTop: hp('1')},
+            textStyle: {
+              color: Colors.white,
+              FontSize: FontSize.scale15,
+              fontWeight: 'bold',
+            },
+            viewStyle: {
+              width: wp('85'),
+              marginTop: hp('1'),
+            },
             errorTextStyle: {color: 'black', width: wp('80')},
           }}
         />
