@@ -16,6 +16,7 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import {hp} from '../Config/responsive';
 import {Colors} from '../Theme/Variables';
 import {TextComponent} from '../Components/TextComponent';
+import {ProfileScreen} from '../Screens';
 
 function HomeScreen({navigation}) {
   return (
@@ -156,15 +157,16 @@ export default function DrawerNavigation() {
     <Drawer.Navigator
       //   screenOptions={{headerShown: false}}
       drawerContent={props => <CustomDrawerContent {...props} />}
-      initialRouteName="Home">
+      initialRouteName="ProfileScreen">
       <Drawer.Screen
         options={{
+          headerShown: false,
           headerTitleStyle: {
             textAlign: 'center',
           },
         }}
-        name="List View"
-        component={HomeScreen}
+        name="Profile Screen"
+        component={ProfileScreen}
       />
       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
     </Drawer.Navigator>

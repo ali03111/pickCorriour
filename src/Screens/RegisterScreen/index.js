@@ -160,7 +160,8 @@ const RegisterScreen = ({navigation}) => {
             <View style={{paddingTop: hp('3')}}>
               <ThemeButton
                 title={'Register'}
-                onPress={handleSubmit(signUpButton)}
+                // onPress={handleSubmit(signUpButton)}
+                onPress={() => navigation.navigate('DrawerNavigation')}
                 style={styles.buttonStyle}
               />
             </View>
